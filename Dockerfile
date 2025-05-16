@@ -1,10 +1,10 @@
 FROM twdps/gha-container-base-image:0.2.1
 
-LABEL org.opencontainers.image.title="gha-container-infra-aws" \
+LABEL org.opencontainers.image.title="gha-container-infra" \
       org.opencontainers.image.description="Alpine-based github actions job container image" \
-      org.opencontainers.image.documentation="https://github.com/ThoughtWorks-DPS/gha-container-infra-aws" \
-      org.opencontainers.image.source="https://github.com/ThoughtWorks-DPS/gha-container-infra-aws" \
-      org.opencontainers.image.url="https://github.com/ThoughtWorks-DPS/gha-container-infra-aws" \
+      org.opencontainers.image.documentation="https://github.com/ThoughtWorks-DPS/gha-container-infra" \
+      org.opencontainers.image.source="https://github.com/ThoughtWorks-DPS/gha-container-infra" \
+      org.opencontainers.image.url="https://github.com/ThoughtWorks-DPS/gha-container-infra" \
       org.opencontainers.image.vendor="ThoughtWorks, Inc." \
       org.opencontainers.image.authors="nic.cheneweth@thoughtworks.com" \
       org.opencontainers.image.licenses="MIT" \

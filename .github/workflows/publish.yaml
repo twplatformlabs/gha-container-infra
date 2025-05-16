@@ -18,10 +18,10 @@ jobs:
     secrets:
       OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
     with:
-      image: twdps/gha-container-infra-aws
+      image: twdps/gha-container-infra
       release-tag: latest
       sign-image: true
       sbom: true
       release-notes: true
-      release-message: New release ThoughtWorks-DPS/gha-container-infra-aws
+      release-message: New release ThoughtWorks-DPS/gha-container-infra
       before-publish: true

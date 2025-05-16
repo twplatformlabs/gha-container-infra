@@ -18,13 +18,13 @@ jobs:
     secrets:
       OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
     with:
-      image: twdps/gha-container-infra-aws
+      image: twdps/gha-container-infra
       opencontainer-labels: true
       before-static-analysis: true
       snyk-scan: true
       snyk-severity-threshold: medium
       snyk-organization: twdps
       bats-test: true
-      bats-run-container-name: gha-container-infra-aws-image
+      bats-run-container-name: gha-container-infra-image
       bats-entry-point: /bin/ash
-      bats-test-path: test/gha-container-infra-aws.bats
+      bats-test-path: test/gha-container-infra.bats
