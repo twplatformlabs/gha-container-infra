@@ -21,6 +21,6 @@ runs:
       with:
         export-env: true
       env:
-        DOCKER_LOGIN: op://empc-lab/svc-dockerhub/username
-        DOCKER_PASSWORD: op://empc-lab/svc-dockerhub/password
-        SNYK_TOKEN: op://empc-lab/svc-snyk/api-token
+        DOCKER_LOGIN: op://platform/svc-dockerhub/username
+        DOCKER_PASSWORD: op://platform/svc-dockerhub/password
+        SNYK_TOKEN: op://platform/svc-snyk/api-token

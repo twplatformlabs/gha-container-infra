@@ -21,20 +21,20 @@ runs:
       with:
         export-env: true
       env:
-        DOCKER_LOGIN: op://empc-lab/svc-dockerhub/username
-        DOCKER_PASSWORD: op://empc-lab/svc-dockerhub/password
-        SNYK_TOKEN: op://empc-lab/svc-snyk/api-token
-        COSIGN_PASSWORD: op://empc-lab/svc-cosign/passphrase
-        SLACK_BOT_TOKEN: op://empc-lab/svc-slack/post-bot-token
+        DOCKER_LOGIN: op://platform/svc-dockerhub/username
+        DOCKER_PASSWORD: op://platform/svc-dockerhub/password
+        SNYK_TOKEN: op://platform/svc-snyk/api-token
+        COSIGN_PASSWORD: op://platform/svc-cosign/passphrase
+        SLACK_BOT_TOKEN: op://platform/svc-slack/post-bot-token
 
     - name: load cosign public key
       uses: twplatformlabs/1password-action/write-to-file@main
       with:
-        op-value: empc-lab/svc-cosign-public-key/notesPlain
+        op-value: platform/svc-cosign-public-key/notesPlain
         out-file: cosign.pub
 
     - name: load cosign key
       uses: twplatformlabs/1password-action/write-to-file@main
       with:
-        op-value: empc-lab/svc-cosign-private-key/notesPlain
+        op-value: platform/svc-cosign-private-key/notesPlain
         out-file: cosign.key
