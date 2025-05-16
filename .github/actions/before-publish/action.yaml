@@ -28,13 +28,13 @@ runs:
         SLACK_BOT_TOKEN: op://empc-lab/svc-slack/post-bot-token
 
     - name: load cosign public key
-      uses: ThoughtWorks-DPS/1password-action/write-to-file@main
+      uses: twplatformlabs/1password-action/write-to-file@main
       with:
         op-value: empc-lab/svc-cosign-public-key/notesPlain
         out-file: cosign.pub
 
     - name: load cosign key
-      uses: ThoughtWorks-DPS/1password-action/write-to-file@main
+      uses: twplatformlabs/1password-action/write-to-file@main
       with:
         op-value: empc-lab/svc-cosign-private-key/notesPlain
         out-file: cosign.key

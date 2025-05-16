@@ -14,7 +14,7 @@ jobs:
 
   publish:
     name: publish image
-    uses: ThoughtWorks-DPS/gha-tools-action/.github/workflows/publish-container.yaml@main
+    uses: twplatformlabs/gha-tools-action/.github/workflows/publish-container.yaml@main
     secrets:
       OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
     with:
@@ -23,5 +23,5 @@ jobs:
       sign-image: true
       sbom: true
       release-notes: true
-      release-message: New release ThoughtWorks-DPS/gha-container-infra
+      release-message: New release twplatformlabs/gha-container-infra
       before-publish: true
