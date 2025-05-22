@@ -18,7 +18,8 @@ jobs:
     secrets:
       OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
     with:
-      image: twdps/gha-container-infra
+      image: gha-container-infra
+      organization: twdps
       opencontainer-labels: true
       before-static-analysis: true
       snyk-scan: true
