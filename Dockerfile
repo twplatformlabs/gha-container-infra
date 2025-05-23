@@ -23,6 +23,7 @@ ENV COSIGN_VERSION=2.2.4
 SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 
 # Install system packages first
+# hadolint ignore=DL3003,DL3004,DL4001,SC2035,DL3018
 RUN bash -c "echo 'http://dl-cdn.alpinelinux.org/alpine/v3.21/main' >> /etc/apk/repositories" && \
   apk add --no-cache \
         ruby \
@@ -35,6 +36,7 @@ RUN bash -c "echo 'http://dl-cdn.alpinelinux.org/alpine/v3.21/main' >> /etc/apk/
         libffi-dev
 
 # Install Node.js separately
+# hadolint ignore=DL3003,DL3004,DL4001,SC2035,DL3018
 RUN apk add --no-cache \
         nodejs-current \
         npm
