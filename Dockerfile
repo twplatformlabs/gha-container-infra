@@ -42,12 +42,14 @@ RUN apk add --no-cache \
         npm
 
 # Continue with Python setup
+# hadolint ignore=DL3003,DL3004
 RUN rm /usr/lib/python3.12/EXTERNALLY-MANAGED && \
     python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
     pip3 install --no-cache-dir --upgrade pip==24.0
 
 # Install Python packages
+# hadolint ignore=DL3003,DL3004
 RUN pip install --no-cache-dir --no-binary \
         setuptools==69.5.1 \
         wheel==0.43.0 \
@@ -59,11 +61,13 @@ RUN pip install --no-cache-dir --no-binary \
         awscli=="${AWSCLI_VERSION}"
 
 # Install Node.js packages
+# hadolint ignore=DL3003,DL3004,DL3008,DL3059
 RUN npm install -g \
         snyk@1.1291.0 \
         bats@1.11.0
 
 # Install Ruby gems
+# hadolint ignore=DL3003,DL3004
 RUN sh -c "echo 'gem: --no-document' > /etc/gemrc" && \
     gem install \
         awspec:1.30.0 \
@@ -71,7 +75,7 @@ RUN sh -c "echo 'gem: --no-document' > /etc/gemrc" && \
         json:2.7.2
 
 # since twdps circleci remote docker images set the USER=cirlceci
-# hadolint ignore=DL3004
+# hadolint ignore=DL3004,DL3003,DL3059
 RUN bash -c "echo 'http://dl-cdn.alpinelinux.org/alpine/v3.21/main' >> /etc/apk/repositories" && \
     curl -SLO "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" > "terraform_${TERRAFORM_VERSION}_linux_amd64.zip" && \
     echo "${TERRAFORM_SHA256SUM}  terraform_${TERRAFORM_VERSION}_linux_amd64.zip" > "terraform_${TERRAFORM_VERSION}_SHA256SUMS" && \
