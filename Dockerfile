@@ -80,7 +80,8 @@ RUN bash -c "echo 'http://dl-cdn.alpinelinux.org/alpine/v3.21/main' >> /etc/apk/
     curl -SLO "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" > "terraform_${TERRAFORM_VERSION}_linux_amd64.zip" && \
     echo "${TERRAFORM_SHA256SUM}  terraform_${TERRAFORM_VERSION}_linux_amd64.zip" > "terraform_${TERRAFORM_VERSION}_SHA256SUMS" && \
     sha256sum -cs "terraform_${TERRAFORM_VERSION}_SHA256SUMS" && rm "terraform_${TERRAFORM_VERSION}_SHA256SUMS" && \
-    unzip "terraform_${TERRAFORM_VERSION}_linux_amd64.zip" -d /usr/local/bin && \
+    unzip "terraform_${TERRAFORM_VERSION}_linux_amd64.zip" && \
+    mv terraform /usr/local/bin && \
     rm "terraform_${TERRAFORM_VERSION}_linux_amd64.zip" && \
     curl -SLO "https://github.com/terraform-linters/tflint/releases/download/v${TFLINT_VERSION}/tflint_linux_amd64.zip" > tflint_linux_amd64.zip && \
     unzip tflint_linux_amd64.zip -d /usr/local/bin && \
