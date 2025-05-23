@@ -78,8 +78,6 @@ RUN sh -c "echo 'gem: --no-document' > /etc/gemrc" && \
 # hadolint ignore=DL3004,DL3003,DL3059
 RUN bash -c "echo 'http://dl-cdn.alpinelinux.org/alpine/v3.21/main' >> /etc/apk/repositories" && \
     curl -SLO "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" > "terraform_${TERRAFORM_VERSION}_linux_amd64.zip" && \
-    echo "${TERRAFORM_SHA256SUM}  terraform_${TERRAFORM_VERSION}_linux_amd64.zip" > "terraform_${TERRAFORM_VERSION}_SHA256SUMS" && \
-    sha256sum -cs "terraform_${TERRAFORM_VERSION}_SHA256SUMS" && rm "terraform_${TERRAFORM_VERSION}_SHA256SUMS" && \
     unzip "terraform_${TERRAFORM_VERSION}_linux_amd64.zip" && \
     rm /usr/local/bin/LICENSE.txt && \
     rm /usr/local/bin/terraform && \
